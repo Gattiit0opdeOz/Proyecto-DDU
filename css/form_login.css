@@ -69,6 +69,16 @@ input{
     border: none;
     outline: none;
 }
+
+select{
+    background: #eee;
+    padding: 12px 15px;
+    margin: 8px 15px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
 a{
     color: #333;
     font-size: 14px;
