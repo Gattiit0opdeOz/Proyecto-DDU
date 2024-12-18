@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container" id="main">
+        <div class="sign-up">
+        <form action="#">
+            <h1>Crear Cuenta</h1>
+            <p>Usa tu codigo para registrarte</p>
+            <input type="text" name="text" placeholder="Nombre" required="">
+            <input type="text" name="codigo" placeholder="Codigo" required="">
+            <input type="password" name="pswd" placeholder="Contraseña" required="">
+            <button>Crear cuenta</button>
+        </form>
+        </div>
+        <div class="sign-in">
+            <form action="#">
+                <h1>Iniciar Sesion</h1>
+                <p>Entra con tu codigo UDG</p>
+                <input type="text" name="codigo" placeholder="Codigo" required="">
+                <input type="password" name="pswd" placeholder="Contraseña" required="">
+                <a href="#">Olvide mi contraseña</a>
+                <button>Iniciar Sesion</button>
+            </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-left">
+                        <h1>Bienvenido de nuevo</h1>
+                        <p>Para iniciar sesion usa tu codigo de la UDG</p>
+                        <button class="signIn">Iniciar Sesion</button>
+                    </div>
+                    <div class="overlay-right">
+                        <h1>Hola!</h1>
+                        <p>Usa tu codigo UDG para registrarte</p>
+                        <button id="signUp">Crear cuenta</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <script type="text/javascript">
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const main = document.getElementById('main');
+
+        signUpButton.addEventListener('click', () => {
+            main.classList.add("right-panel-active");
+        });
+        signInButton.addEventListener('click', () => {
+            main.classList.remove("right-panel-active");
+        });
+    </script>
+</body>
+</html>
