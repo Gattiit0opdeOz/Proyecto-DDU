@@ -12,25 +12,28 @@
 
 
     <header>
-        <nav class="nav">
-            <ul class='nav-bar'>
-                <li class='logo'><a href='index.html'><img src='img/logo.png'/></a></li>
-                <input type='checkbox' id='check' />
-                <span class="menu">
-                    
-                    <li><a href="acercade.html">Acerca de</a> </li>
-                    <li><a href="">Noticias</a></li>
-                    <li><a href="">Proyectos</a></li>
-                    <li><a href="">Contacto</a></li>
-                    <li><a href="form_login.php">Iniciar Sesión</a></li>
-
-                    <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
-                </span>
-                <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
-            </ul>
-         </nav>  
+        <div class="logoheader">
+            <img  src="https://www.udg.mx/themes/drudg8b3/images/Logo_UDG_horiz_blanco-01.svg" alt="">
+        </div>
+        
+        <div class="navegacion">
+            <nav>
+                <ul class="menu">
+                  <li class="item"><a href="#">Home</a></li>
+                  <li class="item"><a href="#">About</a></li>
+                  <li class="item"><a href="#">Services</a></li>
+                  <li class="item"><a href="#">Features</a></li>
+                  <li class="item"><a href="#">Blog</a></li>
+                  <li class="item"><a href="form_login.php">Iniciar sesión</a> </li>
+                  <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+                </ul>
+              </nav>
+        </div>
+        
     </header>
-    <br>
+    <br><br><br>
+
+    
 
     <main>
         <h2>Que es el sistema</h2>
@@ -46,6 +49,21 @@
     <footer>
         <p>Todos los derechos reservados UDG</p>
     </footer>
+
+
+    <script>
+        $(function() {
+    $(".toggle").on("click", function() {
+        if ($(".item").hasClass("active")) {
+            $(".item").removeClass("active");
+            $(this).find("a").html("<i class='fas fa-bars'></i>");
+        } else {
+            $(".item").addClass("active");
+            $(this).find("a").html("<i class='fas fa-times'></i>");
+        }
+    });
+});
+    </script>
     
 </body>
 </html>

@@ -1,24 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/form_login.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="icon" href="img/logo_icon.ico" type="image/x-icon">
+	<title>Shared Reads | Inicio de Sesión</title>	
+	<link rel="stylesheet" href="css/form_login.css">
 </head>
 
-<body>
-    <div class="container" id="main">
-        <div class="sign-up">
-            <form action="#">
-                <h1>Crear Cuenta</h1>
-                <p>Usa tu codigo para registrarte</p>
-                <input type="text" name="text" placeholder="Nombre" required="">
-                <input type="text" name="codigo" placeholder="Codigo" required="">
 
+<body>
+	<div class="container-form register">
+		<div class="information">
+			
+			<div class="info-childs">		
+				<h2>Bienvenido</h2>
+				<p>Inicia sesión con tus credenciales</p>
+				<input type="button" value="Iniciar Sesión" id="sign-in">
+			</div>
+		</div>
+		
+		<div class="form-information">
+			<div class="form-information-childs">
+				<h2>Crea una cuenta</h2>
+				<p>Completa el siguiente formulario</p>
+
+				<p class="error"></p>
+				
+				<form class="form" method="post" action="registro.php"> 
+    
                 
-                <select id="select1" onchange="actualizarSegundoSelect()" required>
+					<label>
+						<i class='bx bx-user'></i>
+						<input type="text" name="nombre" placeholder="Nombre" required="">
+					</label>
+
+					<label>
+						<i class='bx bx-group'></i>
+						<input type="text" placeholder="Codigo de trabajador" id="codigotranajador" name="codigotranajador" required>
+					</label>
+
+					<label>
+						<i class='bx bx-envelope' ></i>
+						<input type="email" placeholder="Correo Electrónico" id="email" name="email" required>
+					</label>
+
+					<label>
+						<i class='bx bx-lock-alt' ></i>
+						<input type="password" placeholder="Contraseña" id="password" name="password" required>
+					</label>
+
+					<label>
+						<i class='bx bx-phone'></i>
+						<input type="number" placeholder="Teléfono" id="tel" name="tel" required>
+					</label>
+
+					<select id="select1" onchange="actualizarSegundoSelect()" required>
                     <option value="" disabled selected> Selecciona tu dependencia</option>
                         <optgroup label="Vicerrectoría Ejecutiva">
                             <option value="SIUBI">Sistema Universitario de Bibliotecas</option>
@@ -34,7 +75,7 @@
                         <optgroup label="Secretaría General">
                             <option value="OAG">Oficina de la Abogacía General</option>
                             <option value="CGCS">Coordinación General de Comunicación Social</option>
-                            <option value="">Coordinación General de Patrimonio</option>
+                            <option value="CGP">Coordinación General de Patrimonio</option>
                             <option value="">Coordinación General de Servicios a Universitarios</option>
                             <option value="">Coordinación de Transparencia y Archivo General</option>
                             <option value="">Coordinación General de Control Escolar</option>
@@ -42,236 +83,55 @@
                         </optgroup>
 
                 </select>
-
-                
-
+					
                 <select id="select2" required>
                     <option value="" disabled selected>Selecciona del directorio</option>
                 </select>
+					
+					<input type="submit" value="Registrarse">
+				</form>
+			</div>
+		</div>
+	</div>
 
-                <input type="password" name="pswd" placeholder="Contraseña" required="">
-                <button>Crear cuenta</button>
-            </form>
-        </div>
+	<div class="container-form login hide">
+		<div class="information">
+			<div class="info-childs">
+				<h2>Bienvenido nuevamente</h2>
+				<p>Si aun no tienes una cuenta crea una facilmente</p>
+				<input type="button" value="Registrarse" id="sign-up">
+			</div>
+		</div>
+		
 
-        <div class="sign-in">
-            <form action="#">
-                <h1>Iniciar Sesion</h1>
-                <p>Entra con tu codigo UDG</p>
-                <input type="text" name="codigo" placeholder="Codigo" required="">
-                <input type="password" name="pswd" placeholder="Contraseña" required="">
-                <a href="#">Olvide mi contraseña</a>
-                <button>Iniciar Sesion</button>
-            </form>
-        </div>
+		<div class="form-information">
+			<div class="form-information-childs">
+				<h2>Iniciar Sesión</h2>
+				<p>Escribe tus credenciales</p>
 
-        <div class="overlay-container">
-            <div class="overlay">
-                <div class="overlay-left">
-                    <h1>Bienvenido de nuevo</h1>
-                    <p>Para iniciar sesion usa tu codigo de trabajador</p>
-                    <button id="signIn">Iniciar Sesion</button>
-                </div>
-                <div class="overlay-right">
-                    <h1>Hola!</h1>
-                    <p>Usa tu codigo de trabajador para registrarte</p>
-                    <button id="signUp">Crear cuenta</button>
-                </div>
-            </div>
-        </div>
-    </div>
+				<form class="form" method="post" action="login.php">
 
-    <script type="text/javascript">
-        const signUpButton = document.getElementById('signUp');
-        const signInButton = document.getElementById('signIn');
-        const main = document.getElementById('main');
+					<label>
+						<i class='bx bx-envelope' ></i>
+						<input type="email" placeholder="Correo Electrónico" id="correo" name="correo" required>
+					</label>
 
-        signUpButton.addEventListener('click', () => {
-            main.classList.add("right-panel-active");
-        });
-        signInButton.addEventListener('click', () => {
-            main.classList.remove("right-panel-active");
-        });
+					<label>
+						<i class='bx bx-lock-alt' ></i>
+						<input type="password" placeholder="Contraseña" id="contrasena" name="contrasena" required>
+					</label>
 
+					<a class="olvidarpass" href="olvidar_contrasena.php">Olvidé mi contraseña</a>
+					
+					<input type="submit" value="Iniciar Sesión">
+				</form>
+			</div>
+		</div>
+	</div>
+		
+<script src="script/script_login.js"></script>
 
-
-
-        
-
-        // Datos de las opciones dependientes
-        //-------------------------------------  VICERECTORIA EJECUTIVA -------------------------------------------------
-        const opciones = {
-            SIUBI: ["Director", 
-                    "Secretaría", 
-                    "Unidad de Servicios a los Usuarios",
-                    "Unidad de Servicios Técnicos",
-                    "Unidad de Planeación y Evaluación",
-                    "Unidad de Tecnologías de la Información",
-                    "Biblioteca Digital y Repositorio Institucional",
-                    "Biblioteca Pública del Estado de Jalisco Juan José Arreola",
-                    "Biblioteca Iberoamericana Octavio Paz",
-                    "Centro Documental de Literatura Iberoamericana Carmen Balcells"
-            ],
-
-
-
-            CGAI:  ["Coordinador General",
-                    "Secretario",
-                    "Coordinación de Desarrollo Académico",
-                    "Coordinación de Fomento al Desarrollo Integral",
-                    "Coordinación de Internacionalización",
-                    "Unidad de Lenguas"
-            ],
-
-
-
-            CGSAIT: ["Coordinador General",
-                     "Secretaría", 
-                     "Unidad de Presupuesto",
-                     "Coordinación de Servicios Generales",
-                     "Coordinación de Mejora Regulatoria e Innovación para la Gestión",
-                     "Coordinación de Diseño de Proyectos Tecnológicos",
-                     "Coordinación de Operaciones, Servicios de Información y Telecomunicaciones",
-                     "Coordinación de Sostenibilidad"
-            ],
-
-            DFinanzas: ["Director",
-                "Secretaria de Dirección de Finanzas",
-                "Coordinación de Contabilidad",
-                "Coordinación de Salarios y Prestaciones Económicas",
-                "Coordinación del Régimen de Pensiones, Jubilaciones y Prestaciones de Seguridad Social",
-                "Unidad de Control Interno",
-                "Unidad de Ingresos",
-                "Unidad de Egresos",
-                "Unidad de Tecnologías"
-            ],
-
-            CGPE: ["Coordinación General",
-                "Secretaría de la Coordinación General",
-                "Diseño",
-                "Patrimonio",
-                "Finanzas",
-                "Recursos Humanos",
-                "Sistemas y Telecomunicaciones",
-                "Oficialía de Partes",
-                "Coordinación de Desarrollo Institucional",
-                "Unidad de Planeación",
-                "Unidad de Estrategias Institucionales",
-                "Coordinación de Evaluación",
-                "Unidad de Análisis Estratégico",
-                "Unidad de Seguimiento y Monitoreo",
-                "Unidad de Estadística Institucional",
-                "Unidad de Programación y Gestión para Resultados",
-                "Unidad de Proyectos y Fondos Externos"
-            ],
-
-
-            CGEDC: ["Coordinación General de Extensión y Difusión Cultural",
-                    "Secretaría de la Coordinación General de Extensión y Difusión Cultural",
-                    "Unidad de Innovación y Vinculación",
-                    "Jefatura de Planeación y Estudios Estratégicos",
-                    "Unidad de Proyectos y Estadística",
-                    "Unidad de Enlace Institucional",
-                    "Jefatura de Finanzas y Auditorías",
-                    "Jefatura de Servicios Generales, Logística y Tecnologías",
-                    "Jefatura de Administración de la CGEDC",
-                    "Jefatura de Recursos Humanos",
-                    "Jefatura de Prensa",
-                    "Jefatura de Diseño y Multimedia",
-                    "Jefatura de Desarrollo y Plataformas en línea",
-                    "Coordinación de Música",
-                    "Dirección de Orquesta Higinio Ruvalcaba",
-                    "Coordinación de Artes Escénicas y Literatura",
-                    "Coordinación de Artes Plásticas, Visuales y Digitales",
-                    "Coordinación de Extensión y Acción Social",
-                    "Unidad de Inclusión",
-                    "Unidad de Brigadas Multidisciplinarias",
-                    "Unidad de Apoyo a Comunidades Indígenas",
-                    "Unidad de Servicio Social",
-                    "Dirección del Centro Cultural Diana",
-                    "Dirección del Museo de las Artes",
-                    "Asistente Dirección del Museo de las Artes",
-                    "Unidad de Cultura Infantil y Juvenil",
-            ],
-
-            CGIPV: ["Coordinación General",
-                    "Secretaría",
-                    "Coordinación de Investigación",
-                    "Unidad Comunicación y Difusión de la Ciencia",
-                    "Unidad de Atención y Fomento a la Investigación",
-                    "Coordinación de Posgrado",
-                    "Unidad de Certificación y Calidad Educativa",
-                    "Unidad de Gestión y Desarrollo",
-                    "Coordinación de Transferencia Tecnológica y del Conocimiento",
-                    "Unidad de Estudios y Análisis de Propiedad Intelectual",
-                    "Unidad de Inversión y Enlace con Sectores de Desarrollo",
-                    "Unidad de Centros de Emprendimiento e Innovación"
-            ],
-
-
-
-
-        //-------------------------------------  SECRETARÍA GENERAL -------------------------------------------------
-            OAG:  ["Abogado General",
-                   "Unidad de Protección del Patrimonio Intangible",
-                   "Secretaría", 
-                   "Coordinación Jurídica", 
-                   "Unidad de lo Contencioso", 
-                   "Unidad de Atención y Prestación de Servicios Legales", 
-                   "Coordinación de Normatividad Universitaria", 
-                   "Unidad de Apoyo a Organos Colegiados", 
-                   "Unidad de Proyectos de Normatividad Administrativa", 
-                   "Unidad de Estatutos y Reglamentos", 
-                   "Coordinación de Enlace con la Red", 
-                   "Unidad de Capacitación, Investigación y Difusión de la Cultura Jurídica", 
-                   "Unidad de Instrumentos Jurídicos", 
-                   "Unidad de Asuntos Internacionales", 
-            ],
-
-
-            CGCS: ["Coordinación General",
-                   "Asistente",
-                   "Secretario de la Coordinación General de Comunicación Social",
-                   "Medios",
-                   "Coordinación de Prensa y Comunicaciones",
-                   "Red de Comunicación Universitaria",
-                   "Atención a Medios",
-                   "Unidad de Comunicación Interna y Mercadotecnia",
-                   "Unidad de Gaceta"
-            ]
-
-
-        };
-
-        function actualizarSegundoSelect() {
-            const select1 = document.getElementById("select1");
-            const select2 = document.getElementById("select2");
-            const seleccion = select1.value;
-
-            // Limpia el segundo select
-            select2.innerHTML = "";
-
-            // Agrega la opción predeterminada no seleccionable
-            const defaultOption = document.createElement("option");
-            defaultOption.value = "";
-            defaultOption.textContent = "Selecciona del directorio";
-            defaultOption.disabled = true;
-            defaultOption.selected = true;
-            select2.appendChild(defaultOption);
-
-            // Si hay opciones para la selección actual, las agrega
-            if (opciones[seleccion]) {
-                opciones[seleccion].forEach(raza => {
-                    const option = document.createElement("option");
-                    option.value = raza.toLowerCase();
-                    option.textContent = raza;
-                    select2.appendChild(option);
-                });
-            }
-
-            // Hacer el segundo select obligatorio
-            select2.required = true;
-        }
-    </script>
+       
+    
 </body>
 </html>
