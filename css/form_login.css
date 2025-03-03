@@ -10,7 +10,7 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-image: url(../img/img-background.jpg);
+    background-image: url(../img/fondo-login.png);
     background-size: cover;
 }
 
@@ -42,7 +42,11 @@ body{
     display: flex;
     align-items: center;
     text-align: center;
-    background-color: #c7eef3;
+    background-color: #00427B;
+    background-image: -moz-linear-gradient(#00427B, #002D4B);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#00427B), to(#002D4B));
+    background-image: -webkit-linear-gradient(#00427B, #002D4B);
+    background-image: -o-linear-gradient(#00427B, #002D4B);
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
@@ -55,30 +59,30 @@ body{
 
  .info-childs h2{
     font-size: 2.5rem;
-    color: #333;
+    color: #ececec;
  }
 
  .info-childs p{
     margin: 15px 0;
-    color: #555;
+    color: #ececec;
 }
  
 
  .info-childs input{
     background-color: transparent;
     outline: none;
-    border: solid 2px #9191bd;
+    border: solid 2px #ececec;
     border-radius: 10px;
     padding: 10px 20px;
-    color: #9191bd;
+    color: #ececec;
     cursor: pointer;
     transition: background-color .3 ease;
  }
 
  .info-childs input:hover{
-    background-color: #9191bd;
+    background-color: #ececec;
     border: none;
-    color: #fff;
+    color: #333;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
  }
 
@@ -136,7 +140,7 @@ body{
  }
 
  .form input[type="submit"]{
-    background-color: #9191bd;
+    background-color: #333;
     color: #fff;
     border-radius: 10px;
     border: none;
@@ -146,7 +150,9 @@ body{
  }
 
  .form input[type="submit"]:hover{
-    background-color: #7a7a9a;
+    background-color: #fff;
+    color: #333;
+    border: solid 2px #333;
  }
 
  .form select{

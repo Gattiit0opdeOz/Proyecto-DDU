@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    border: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+body{
+    background-image: url(../img/fondo-login.png);
+    background-size: cover;
+}
+
+.main-container{
+    width: 100%;
+    display: flex; /* Activa el diseño flexible */
+    align-items: center; /* Alinea verticalmente la imagen y el texto */
+    gap: 20px; /* Espacio entre la imagen y el texto */
+} 
+
+.imagen-inicio {
+    flex: 1; /* La imagen ocupa un espacio flexible */
+  }
+
+  .imagen-inicio img {
+    max-width: 100%; /* Hace que la imagen sea responsiva */
+    height: auto;
+    display: block;
+  }
+
+  .info-principal {
+    flex: 2; /* El texto ocupa más espacio que la imagen */
+    font-size: 48px;
+  }

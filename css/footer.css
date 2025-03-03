@@ -1,0 +1,45 @@
+*{  
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+footer{
+    color:#fff;
+    background-color: #00427B;
+    background-image: -moz-linear-gradient(#00427B, #002D4B);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#00427B), to(#002D4B));
+    background-image: -webkit-linear-gradient(#00427B, #002D4B);
+    background-image: -o-linear-gradient(#00427B, #002D4B);
+    align-items: center;
+    text-align: center;
+}
+
+.logofooter{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 130px;
+}
+
+.logofooter img{
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    z-index: 40000;
+    width: 100%;
+    max-width: 468px;
+    top: 20px;
+}
+
+footer p{
+    font-size: 10px;
+}
+
+.redes_pie img {
+    max-width: 35px;
+    margin: 10px;
+}

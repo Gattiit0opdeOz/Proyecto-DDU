@@ -61,6 +61,10 @@
 
 					<select id="select1" onchange="actualizarSegundoSelect()" required>
                     <option value="" disabled selected> Selecciona tu dependencia</option>
+						<optgroup label="Honorable Consejo General Universitario">
+							<option value="DDU">Defensoría de los Derechos Universitarios</option>
+						</optgroup>
+					
                         <optgroup label="Vicerrectoría Ejecutiva">
                             <option value="SIUBI">Sistema Universitario de Bibliotecas</option>
                             <option value="CGAI">Coordinación General Académica y de Innovación</option>
@@ -85,7 +89,7 @@
                 </select>
 					
                 <select id="select2" required>
-                    <option value="" disabled selected>Selecciona del directorio</option>
+                    <option value="" disabled selected>Selecciona tu cargo</option>
                 </select>
 					
 					<input type="submit" value="Registrarse">
