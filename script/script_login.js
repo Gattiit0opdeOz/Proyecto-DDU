@@ -130,7 +130,7 @@ btnSignUp.addEventListener("click", e =>{
             ],
 
 //--aqui falta
-            CGEDC: ["Coordinación General de Extensión y Difusión Cultural",
+            CGEDC: ["Coordinadora General de Extensión y Difusión Cultural",
                     "Secretaría de la Coordinación General de Extensión y Difusión Cultural",
                     "Unidad de Innovación y Vinculación",
                     "Jefatura de Planeación y Estudios Estratégicos",
