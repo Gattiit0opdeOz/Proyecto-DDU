@@ -1,0 +1,86 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0; /* Asegura que el menú lateral esté pegado a la parte superior */
+    width: 250px;
+    height: 100%;
+    background-color: #00427B;
+    background-image: -moz-linear-gradient(#00427B, #002D4B);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#00427B), to(#002D4B));
+    background-image: -webkit-linear-gradient(#00427B, #002D4B);
+    background-image: -o-linear-gradient(#00427B, #002D4B);
+    color: white;
+    padding-top: 20px;
+}
+
+.sidebar .menu {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 75px;
+}
+
+.sidebar .menu li {
+    font-size: 17px;
+    text-align: center;
+    padding: 0 10px;
+    margin: 40px 10px;
+}
+
+.sidebar .menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 15px 10px;
+}
+
+.sidebar .menu li a:hover {
+    background-color: #fff;
+    color: #002D4B;
+    border-radius: 10px;
+}
+
+.header {
+    position: fixed; /* Hace que el header quede fijo en la parte superior */
+    top: 0; /* Se asegura de que el header esté pegado al top */
+    left: 0; /* Alineado a la izquierda */
+    right: 0; /* Alineado a la derecha */
+    width: 100%; /* Asegura que el header ocupe todo el ancho */
+    display: flex;
+    color: #fff;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #333;
+    z-index: 1000; /* Asegura que el header esté encima del menú lateral */
+}
+
+.header .header-left img {
+    height: 50px;
+    margin-left: 45px;
+}
+
+.header .header-right{
+    margin-right: 40px;
+}
+
+.header .header-right .icon {
+    font-size: 30px;
+    color: #fff;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.header .header-right .icon:hover {
+    color: #007BFF;
+}
+
+.content {
+    margin-left: 250px; /* Para que el contenido no se superponga al menú lateral */
+    padding: 20px;
+    margin-top: 80px; /* Para que el contenido no quede debajo del header */
+}

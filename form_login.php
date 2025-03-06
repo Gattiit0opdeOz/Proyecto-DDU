@@ -1,3 +1,14 @@
+<?php
+	session_start();
+	// Verifica si hay un mensaje en la variable de sesión
+	if (isset($_SESSION['mensaje'])) {
+		// Genera un script de JavaScript para mostrar el mensaje
+		echo "<script>alert('{$_SESSION['mensaje']}');</script>";
+		 unset($_SESSION['mensaje']);
+	}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +19,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<link rel="icon" href="img/logo_icon.ico" type="image/x-icon">
-	<title>Shared Reads | Inicio de Sesión</title>	
+	<title>Pazdata | Inicio de Sesión</title>	
 	<link rel="stylesheet" href="css/form_login.css">
 </head>
 
@@ -55,43 +66,26 @@
 					</label>
 
 					<label>
-						<i class='bx bx-phone'></i>
-						<input type="number" placeholder="Teléfono" id="tel" name="tel" required>
+						<i class='bx bx-buildings'></i>
+						<input type="text" placeholder="Dependencia" id="depe" name="depe" required>
 					</label>
 
-					<select id="select1" onchange="actualizarSegundoSelect()" required>
-                    <option value="" disabled selected> Selecciona tu dependencia</option>
-						<optgroup label="Honorable Consejo General Universitario">
-							<option value="DDU">Defensoría de los Derechos Universitarios</option>
-						</optgroup>
-					
-                        <optgroup label="Vicerrectoría Ejecutiva">
-                            <option value="SIUBI">Sistema Universitario de Bibliotecas</option>
-                            <option value="CGAI">Coordinación General Académica y de Innovación</option>
-                            <option value="CGSAIT">Coordinación General de Servicios Administrativos  
-                            e Infraestructura Tecnológica</option>
-                            <option value="DFinanzas">Dirección de Finanzas</option>
-                            <option value="CGPE">Coordinación General de Planeación y Evaluación</option>
-                            <option value="CGEDC">Coordinación General de Extensión y Difusión Cultural</option>
-                            <option value="CGIPV">Coordinación General de Investigación, Posgrado y Vinculación</option>
-                        </optgroup>
+					<label>
+						<i class='bx bx-briefcase-alt'></i>
+						<input type="text" placeholder="Cargo" id="cargo" name="cargo" required>
+					</label>
 
-                        <optgroup label="Secretaría General">
-                            <option value="OAG">Oficina de la Abogacía General</option>
-                            <option value="CGCS">Coordinación General de Comunicación Social</option>
-                            <option value="CGP">Coordinación General de Patrimonio</option>
-                            <option value="">Coordinación General de Servicios a Universitarios</option>
-                            <option value="">Coordinación de Transparencia y Archivo General</option>
-                            <option value="">Coordinación General de Control Escolar</option>
-                            <option value="">Coordinación General de Recursos Humanos</option>
-                        </optgroup>
 
-                </select>
-					
-                <select id="select2" required>
-                    <option value="" disabled selected>Selecciona tu cargo</option>
-                </select>
-					
+					<select name="rol" id="rol">
+						<option value="" disabled selected>Selecciona el rol del usuario</option>
+						<option value="administrador">Administrador</option>
+						<option value="designado">Enlace Designado</option>
+						<option value="usuario">Usuario General</option>
+						<option value="desarrollador">Desarrolador y Soporte Tecnico &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+
+					</select>
+
+
 					<input type="submit" value="Registrarse">
 				</form>
 			</div>
